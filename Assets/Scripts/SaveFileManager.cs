@@ -37,7 +37,8 @@ public class SaveFileManager : MonoBehaviour
 
     private string savePath;
     private int fileCount = 0;
-    private bool isCopied = false;
+    private int copyCount = 0;
+    private bool isChanged = false;
 
     private void Start()
     {
@@ -45,12 +46,12 @@ public class SaveFileManager : MonoBehaviour
         if (!Directory.Exists(savePath))
         {
             Directory.CreateDirectory(savePath);
-            Debug.Log($"폴더 생성: {savePath}");
         }
         else
         {
-            Debug.Log("폴더가 이미 존재합니다.");
+            ResetDirectory(savePath);
         }
+        Debug.Log($"폴더 생성: {savePath}");
     }
 
     public void OnClickCreateButton()
@@ -69,21 +70,101 @@ public class SaveFileManager : MonoBehaviour
         GetFiles(savePath);
     }
 
-    private void CopyFile()
+    public void OnClickButtonCopy()
     {
-        string dst = $"save{fileCount}_backup.txt";
-        string src = $"save{fileCount}.txt";
-        try
+        (string copySrc, string copyResult) = CopyFile(savePath);
+        if (!string.IsNullOrEmpty(copyResult) || !string.IsNullOrEmpty(copySrc))
         {
-            File.Copy(src, dst);
-            Debug.Log($"{src} -> {dst} 복사 완료");
-            isCopied = true;    
+            Debug.Log($"{copySrc} -> {copyResult} 복사 완료");
         }
-        catch (Exception e)
+    }
+
+    public void OnClickButtonDelete()
+    {
+        if (DeleteFile(savePath, fileCount))
         {
-            Debug.Log("복사 실패");
+            fileCount--;
+        }
+        else {Debug.Log("파일을 삭제 실패");}
+    }
+
+    public void OnClickButtonReset()
+    {
+        if (ResetDirectory(savePath))
+        {
+            Debug.Log($"{savePath}에 모든 파일이 삭제되었습니다.");
+        }
+        else
+        {
+            Debug.Log("리셋할 파일이 없습니다.");
+        }
+        
+    }
+
+    private bool ResetDirectory(string path)
+    {
+        if (!Directory.Exists(path) || Directory.GetFiles(path).Length == 0)
+        {
+            return false;
         }
 
+        Directory.Delete(path, true);
+        Directory.CreateDirectory(path);
+        isChanged = false;
+        fileCount = 0;
+        copyCount = 0;
+
+        return true;
+    }
+
+    private bool DeleteFile(string path, int count)
+    {
+        if (!Directory.Exists(path) || Directory.GetFiles(path).Length == 0)
+        {
+            Debug.Log($"{path}에 파일이 존재하지 않습니다.");
+            return false;
+        }
+        string fileToDelete = Path.Combine(path, $"save{count}.txt");
+        if (!File.Exists(fileToDelete))
+        {
+            Debug.Log($"{fileToDelete}이 존재하지 않습니다.");
+            return false;
+        }
+        File.Delete(fileToDelete);
+        if (!isChanged) {isChanged = true;}
+
+        Debug.Log($"save{count}.txt 삭제 완료");
+        return true;
+    }
+
+    private (string, string) CopyFile(string path)
+    {
+        if (!Directory.Exists(path) && Directory.GetFiles(path).Length == 0)
+        {
+            Debug.Log($"{path}에 파일이 존재하지 않습니다.");
+            return("", "");
+        }
+        string[] files = Directory.GetFiles(path);
+
+        if (copyCount >= files.Length) 
+        {
+            Debug.Log($"{copyCount + 1}번째 파일이 존재하지 않아 복사할 수 없습니다.");
+            return ("",""); 
+        }
+
+        string srcFileName = Path.GetFileName(files[copyCount]);
+        string srcExt = Path.GetFileNameWithoutExtension(files[copyCount]);
+        string srcPath = files[copyCount];
+        string dstFileName = $"{srcExt}_backup.txt";
+        string dst = Path.Combine(path, dstFileName);  
+          
+
+        File.Copy(srcPath, dst, true); 
+        DeleteFile(path, copyCount + 1);
+        copyCount++;
+        if (!isChanged) { isChanged = true; }
+
+        return (srcFileName, dstFileName);
     }
 
     private void WriteFile(string path, string fileName, string content)
@@ -104,15 +185,20 @@ public class SaveFileManager : MonoBehaviour
 
     private void GetFiles(string path)
     {
+        if (!Directory.Exists(path) && Directory.GetFiles(path).Length == 0)
+        {
+            Debug.Log($"{path}에 파일이 존재하지 않습니다.");
+            return;
+        }
         string[] files = Directory.GetFiles(path);
-        string[] results = new string[files.Length];    
+        string[] results = new string[files.Length];   
+
         for (int i = 0; i < files.Length; i++)
         {
             results[i] = Path.GetFileName(files[i]) ;
         }
-        if (isCopied) { Debug.Log("=== 세이브 파일 목록 ==="); }
+        if (!isChanged) { Debug.Log("=== 세이브 파일 목록 ==="); }
         else { Debug.Log("=== 작업 후 파일 목록 ==="); }
-        
         
         for (int i = 0; i < results.Length; i++)
         {
