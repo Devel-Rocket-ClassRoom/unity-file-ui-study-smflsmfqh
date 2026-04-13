@@ -112,7 +112,7 @@ public class LocalizationText : MonoBehaviour
             OnChangedLanguage(editorLang);
         }
 #endif
-        OnChangedId();
+        //OnChangedId();
     }
 
     private void OnDisable()
@@ -141,7 +141,7 @@ public class LocalizationText : MonoBehaviour
 
     }
 #if UNITY_EDITOR
-    private void OnChangedLanguage(Languages lang)
+    public void OnChangedLanguage(Languages lang)
     {
         var stringTable = DataTableManager.GetStringTable(lang);
         text.text = stringTable.Get(id);
@@ -151,8 +151,14 @@ public class LocalizationText : MonoBehaviour
     [ContextMenu("Apply All Menu")]
     private void ApplyAllLang()
     {
-        Variables.OnLanguageChangedEditor += OnChangedLanguage;
-        OnChangedId();
+#if UNITY_EDITOR
+        var all = FindObjectsOfType<LocalizationText>(true);
+
+        foreach (var item in all)
+        {
+            item.OnChangedLanguage(editorLang);
+        }
+#endif
     }
     
 }
