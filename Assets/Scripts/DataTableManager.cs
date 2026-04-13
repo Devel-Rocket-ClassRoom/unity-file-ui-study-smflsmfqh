@@ -37,6 +37,12 @@ public static class DataTableManager
 #endif
     }
 
+    public static void ChangeLanguage(Languages lang)
+    {
+        var stringTable = StringTable;
+        stringTable.Load(DataTableIds.StringTableIds[(int)lang]); // 매개변수로 받은 언어로 stringtable을 변경함
+    }
+
     public static T Get<T>(string id) where T : DataTable
     {
         if (!tables.ContainsKey(id))

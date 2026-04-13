@@ -1,5 +1,10 @@
 using UnityEngine;
 using TMPro;
+/*
+ * HW
+ * 일괄 변경하는 기능 추가하기 -> 에디팅 중에 (플레이 중이 아닐 때), 모든 언어를 일괄 적용
+ * Context menu? property 이용
+ */
 
 [ExecuteInEditMode]
 public class LocalizationText : MonoBehaviour
@@ -97,7 +102,9 @@ public class LocalizationText : MonoBehaviour
     {
         if (Application.isPlaying)
         {
+            Variables.OnLanguageChanged += OnChangedLanguage;
             OnChangedId();  
+
         }
 #if UNITY_EDITOR
         else
@@ -108,14 +115,20 @@ public class LocalizationText : MonoBehaviour
         OnChangedId();
     }
 
+    private void OnDisable()
+    {
+        if (Application.isPlaying)
+        {
+            Variables.OnLanguageChanged -= OnChangedLanguage;
+        }
+
+    }
+
     private void OnValidate()
     {
 #if UNITY_EDITOR
         OnChangedLanguage(editorLang);
-#else
-        OnChangedLanguage();
 #endif
-        //OnChangedId();
     }
     private void OnChangedId()
     {

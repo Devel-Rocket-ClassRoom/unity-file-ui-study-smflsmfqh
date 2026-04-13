@@ -15,6 +15,24 @@ public class DataTableTest : MonoBehaviour
         stringTable = new StringTable();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Variables.Language = Languages.Korean;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Variables.Language = Languages.English;
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            Variables.Language = Languages.Japanese;
+        }
+    }
+
     public void OnClickButtonStringTableKr()
     {
         foreach (string key in keys)
