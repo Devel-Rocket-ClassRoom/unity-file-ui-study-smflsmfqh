@@ -39,15 +39,33 @@ public static class DataTableManager
 
     public static void ChangeLanguage(Languages lang)
     {
-        var stringTable = StringTable;
-        stringTable.Load(DataTableIds.StringTableIds[(int)lang]); // 매개변수로 받은 언어로 stringtable을 변경함
+        string tableId = DataTableIds.StringTableIds[(int)lang];
+        if (tables.ContainsKey(tableId))
+        {
+            return;
+        }
+
+        string oldId = string.Empty;
+        foreach (var id in DataTableIds.StringTableIds)
+        {
+            if (tables.ContainsKey(id))
+            {
+                oldId = id;
+                break;
+            }
+        }
+        var stringTable = tables[oldId];
+        stringTable.Load(tableId); // 매개변수로 받은 언어로 stringtable을 변경함
+        tables.Remove(oldId);
+        tables.Add(DataTableIds.String, stringTable);
     }
 
     public static T Get<T>(string id) where T : DataTable
     {
         if (!tables.ContainsKey(id))
         {
-            Init();
+            Debug.LogError("테이블 없음");
+            return null;
         }
         return tables[id] as T; 
     }

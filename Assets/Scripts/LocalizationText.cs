@@ -148,4 +148,11 @@ public class LocalizationText : MonoBehaviour
     }
 #endif
 
+    [ContextMenu("Apply All Menu")]
+    private void ApplyAllLang()
+    {
+        Variables.OnLanguageChangedEditor += OnChangedLanguage;
+        OnChangedId();
+    }
+    
 }
