@@ -11,10 +11,10 @@ Item1Desc,This is a sword.
 Item2Desc,This is a shield.
 Item3Desc,This is a bow.
 Item4Desc,This is a potion.
-Character1Name,이하늘
-Character2Name,김경일
-Character3Name,김유찬
-Character4Name,유민준
+Character1Name,Warrior
+Character2Name,Magician
+Character3Name,Elf
+Character4Name,Healer
 Char1Desc,This is the best Warrior.
 Char2Desc,This is a just Magician.
 Char3Desc,This is a just Elf.
