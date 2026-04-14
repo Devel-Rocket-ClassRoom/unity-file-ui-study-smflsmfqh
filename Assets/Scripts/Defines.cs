@@ -1,10 +1,23 @@
-using Unity.VisualScripting;
-
 public enum Languages
 {
     Korean,
     English,
     Japanese, 
+}
+
+public enum ItemTypes
+{
+    Weapon,
+    Equip,
+    Consumable,
+}
+
+public enum CharacterTypes
+{
+    Warrior,
+    Magician,
+    Elf,
+    Healer,
 }
 
 public static class Variables
@@ -38,11 +51,13 @@ public static class Variables
     {
         public static readonly string[] StringTableIds =
         {
-        "StringTableKr3",
-        "StringTableEn",
-        "StringTableJp"
+            "StringTableKr",
+            "StringTableEn",
+            "StringTableJp"
         };
         public static string String => StringTableIds[(int)Variables.Language];
+        public static string Item => "ItemTable";
+        public static string Character => "CharacterTable";
     }
 
 

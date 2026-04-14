@@ -4,7 +4,7 @@ public class DataTableTest : MonoBehaviour
 {
     private StringTable stringTable;
 
-    public string NameStringTableKr = "StringTableKr3";
+    public string NameStringTableKr = "StringTableKr";
     public string NameStringTableEn = "StringTableEn";
     public string NameStringTableJp = "StringTableJp";
 

@@ -8,6 +8,8 @@ public static class DataTableManager
     private static readonly Dictionary<string, DataTable> tables = new Dictionary<string, DataTable>();
 
     public static StringTable StringTable => Get<StringTable>(DataTableIds.String);
+    public static ItemTable ItemTable => Get<ItemTable>(DataTableIds.Item);
+    public static CharacterTable CharacterTable => Get<CharacterTable>(DataTableIds.Character);
 
 #if UNITY_EDITOR
     public static StringTable GetStringTable(Languages language)
@@ -35,6 +37,14 @@ public static class DataTableManager
             tables.Add(id, stringTable);
         }
 #endif
+
+        var itemTable = new ItemTable();
+        itemTable.Load(DataTableIds.Item);
+        tables.Add(DataTableIds.Item, itemTable);
+
+        var characterTable = new CharacterTable();
+        characterTable.Load(DataTableIds.Character);
+        tables.Add(DataTableIds.Character, characterTable);
     }
 
     public static void ChangeLanguage(Languages lang)

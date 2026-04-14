@@ -115,6 +115,28 @@ public class LocalizationText : MonoBehaviour
         //OnChangedId();
     }
 
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            Variables.Language = Languages.Korean;
+            Debug.Log($"언어 설정: {Languages.Korean}으로 변경 완료");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            Variables.Language = Languages.English;
+            Debug.Log($"언어 설정: {Languages.English}으로 변경 완료");
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3)) 
+        {
+            Variables.Language = Languages.Japanese;
+            Debug.Log($"언어 설정: {Languages.Japanese}으로 변경 완료");
+        }
+    }
+
+
     private void OnDisable()
     {
         if (Application.isPlaying)
@@ -127,10 +149,11 @@ public class LocalizationText : MonoBehaviour
     private void OnValidate()
     {
 #if UNITY_EDITOR
+        Variables.Language = editorLang;
         OnChangedLanguage(editorLang);
 #endif
     }
-    private void OnChangedId()
+    public void OnChangedId()
     {
         text.text = DataTableManager.StringTable.Get(id);
     }

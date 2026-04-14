@@ -1,4 +1,29 @@
 ﻿Id,String
-HELLO,こんにちは
-I AM,わたしは
-SKY,そらです
+,
+HELLO,やあ
+BYE,じゃあな
+YOU DIE,あなたは死ぬ
+Item1Name,剣
+Item2Name,盾
+Item3Name,弓
+Item4Name,ポーション
+Item1Desc,これは剣だ。
+Item2Desc,これは盾だ。
+Item3Desc,これは弓だ。
+Item4Desc,これはポーションだ。
+Character1Name,이하늘
+Character2Name,김경일
+Character3Name,김유찬
+Character4Name,유민준
+Char1Desc,これが最高の戦士だ.
+Char2Desc,これはただのマジシャンです.
+Char3Desc,これはただのエルフです.
+Char4Desc,これはただのヒーラーです.
+Char1Attack,攻撃力: 1000
+Char2Attack,攻撃力: 0
+Char3Attack,攻撃力:-1
+Char4Attack,攻撃力: 50
+Char1IQ,知能: 150
+Char2IQ,知能: 90
+Char3IQ,知能: 99
+Char4IQ,知能: 80 

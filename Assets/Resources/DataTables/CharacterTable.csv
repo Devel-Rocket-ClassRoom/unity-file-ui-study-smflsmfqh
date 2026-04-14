@@ -1,0 +1,5 @@
+﻿Id,Type,Name,Desc,Attack,IQ,Icon
+Character1,Warrior,Character1Name,Char1Desc,Char1Attack,Char1IQ,Icon_Warrior
+Character2,Magician,Character2Name,Char2Desc,Char2Attack,Char2IQ,Icon_Magician
+Character3,Elf,Character3Name,Char3Desc,Char3Attack,Char3IQ,Icon_Elf
+Character4,Healer,Character4Name,Char4Desc,Char4Attack,Char4IQ,Icon_Healer
