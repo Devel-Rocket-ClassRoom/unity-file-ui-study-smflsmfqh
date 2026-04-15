@@ -19,10 +19,7 @@ Char1Desc,それは私には答えられません.
 Char2Desc,これはただのマジシャンです.
 Char3Desc,これはただのエルフです.
 Char4Desc,これはただのヒーラーです.
-Char1Attack,こうげきりょく: 1000
-Char2Attack,こうげきりょく: 0
-Char3Attack,こうげきりょく:-1
-Char4Attack,こうげきりょく: 50
+AttackFormat,こうげきりょく: {0}
 Char1IQ,ちのう: 150
 Char2IQ,ちのう: 90
 Char3IQ,ちのう: 99

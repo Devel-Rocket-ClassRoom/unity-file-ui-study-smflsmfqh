@@ -8,6 +8,7 @@ public class StringTable : DataTable
     {
         public string Id {  get; set; }
         public string String { get; set; }
+        
     }
 
     // Dictionary 형태로 관리

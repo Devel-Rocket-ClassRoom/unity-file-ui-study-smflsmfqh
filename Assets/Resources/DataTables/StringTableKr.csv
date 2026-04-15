@@ -19,10 +19,7 @@ Char1Desc,세상에서 제일 쎈 전사.
 Char2Desc,쪼랩 마법사.
 Char3Desc,왕쪼랩 엘프.
 Char4Desc,그냥 힐러.
-Char1Attack,공격력: 1000
-Char2Attack,공격력: 0
-Char3Attack,공격력:-1
-Char4Attack,공격력: 50
+AttackFormat,공격력: {0}
 Char1IQ,지능(IQ): 150
 Char2IQ,지능(IQ): 90
 Char3IQ,지능(IQ): 99

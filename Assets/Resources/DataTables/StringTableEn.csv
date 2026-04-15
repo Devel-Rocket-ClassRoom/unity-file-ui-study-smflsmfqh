@@ -19,10 +19,7 @@ Char1Desc,This is the best Warrior.
 Char2Desc,This is a just Magician.
 Char3Desc,This is a just Elf.
 Char4Desc,This is a just Healer.
-Char1Attack,Attack: 1000
-Char2Attack,Attack: 0
-Char3Attack,Attack:-1
-Char4Attack,Attack: 50
+AttackFormat: {0}
 Char1IQ,IQ: 150
 Char2IQ,IQ: 90
 Char3IQ,IQ: 99
