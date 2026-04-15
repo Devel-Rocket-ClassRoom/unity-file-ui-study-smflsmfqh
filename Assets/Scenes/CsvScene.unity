@@ -175,7 +175,7 @@ MonoBehaviour:
   charId: Character2
   Icon: {fileID: 1091091319}
   textName: {fileID: 257629191}
-  itemInfo: {fileID: 2058633431}
+  charInfo: {fileID: 2058633431}
 --- !u!114 &29283378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1416,7 +1416,7 @@ MonoBehaviour:
   charId: Character4
   Icon: {fileID: 134017402}
   textName: {fileID: 1197786895}
-  itemInfo: {fileID: 2058633431}
+  charInfo: {fileID: 2058633431}
 --- !u!114 &329960394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3419,7 +3419,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1066311716
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4217,7 +4217,7 @@ MonoBehaviour:
   charId: Character1
   Icon: {fileID: 1278333790}
   textName: {fileID: 467492632}
-  itemInfo: {fileID: 2058633431}
+  charInfo: {fileID: 2058633431}
 --- !u!114 &1223039679
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4495,7 +4495,7 @@ MonoBehaviour:
   charId: Character3
   Icon: {fileID: 712851820}
   textName: {fileID: 1270918066}
-  itemInfo: {fileID: 2058633431}
+  charInfo: {fileID: 2058633431}
 --- !u!114 &1256850031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6584,8 +6584,8 @@ MonoBehaviour:
   icon: {fileID: 159627322}
   textName: {fileID: 942608113}
   textDesc: {fileID: 155616622}
-  textAttack: {fileID: 790660438}
-  textIq: {fileID: 1014797125}
+  textAttack: {fileID: 790660439}
+  textIq: {fileID: 1014797126}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

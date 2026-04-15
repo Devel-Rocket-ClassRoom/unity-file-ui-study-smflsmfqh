@@ -13,8 +13,8 @@ public class CharacterData
     public CharacterTypes Type {get; set;}
     public string Name { get; set; }
     public string Desc { get; set; }
-    public string Attack { get; set; }
-    public string IQ { get; set; }
+    public int Attack { get; set; }
+    public int IQ { get; set; }
     public string Icon { get; set; }
 
     public override string ToString()
@@ -24,6 +24,8 @@ public class CharacterData
 
     public string StringName => DataTableManager.StringTable.Get(Name);
     public string StringDesc => DataTableManager.StringTable.Get(Desc);
+    public string StringAttack => string.Format(DataTableManager.StringTable.Get("AttackFormat"), Attack);
+    public string StringIQ => string.Format(DataTableManager.StringTable.Get("IqFormat"), IQ);
     public Sprite SpriteIcon => Resources.Load<Sprite>($"Icon/{Icon}");
 }
 

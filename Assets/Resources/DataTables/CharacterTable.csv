@@ -1,5 +1,5 @@
 ﻿Id,Type,Name,Desc,Attack,IQ,Icon
-Character1,Warrior,Character1Name,Char1Desc,1000,Char1IQ,Icon_Warrior
-Character2,Magician,Character2Name,Char2Desc,0,Char2IQ,Icon_Magician
-Character3,Elf,Character3Name,Char3Desc,-1,Char3IQ,Icon_Elf
-Character4,Healer,Character4Name,Char4Desc,50,Char4IQ,Icon_Healer
+Character1,Warrior,Character1Name,Char1Desc,1000,150,Icon_Warrior
+Character2,Magician,Character2Name,Char2Desc,0,90,Icon_Magician
+Character3,Elf,Character3Name,Char3Desc,-1,88,Icon_Elf
+Character4,Healer,Character4Name,Char4Desc,50,101,Icon_Healer

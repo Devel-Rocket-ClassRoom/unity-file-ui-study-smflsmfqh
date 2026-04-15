@@ -47,18 +47,18 @@ public static class Variables
     }
 }
 
-    public static class DataTableIds
+public static class DataTableIds
+{
+    public static readonly string[] StringTableIds =
     {
-        public static readonly string[] StringTableIds =
-        {
-            "StringTableKr",
-            "StringTableEn",
-            "StringTableJp"
-        };
-        public static string String => StringTableIds[(int)Variables.Language];
-        public static string Item => "ItemTable";
-        public static string Character => "CharacterTable";
-    }
+        "StringTableKr",
+        "StringTableEn",
+        "StringTableJp"
+    };
+    public static string String => StringTableIds[(int)Variables.Language];
+    public static string Item => "ItemTable";
+    public static string Character => "CharacterTable";
+}
 
 
 

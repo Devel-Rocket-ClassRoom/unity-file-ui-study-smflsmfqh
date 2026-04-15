@@ -8,12 +8,29 @@ public class CharacterTableTest2 : MonoBehaviour
     public Image icon;
     public LocalizationText textName;
     public LocalizationText textDesc;
-    public LocalizationText textAttack;
-    public LocalizationText textIq;
+    public TextMeshProUGUI textAttack;
+    public TextMeshProUGUI textIq;
+
+    private CharacterData currentData;
 
     private void OnEnable()
     {
+        Variables.OnLanguageChanged += OnChangedLanguage;
         SetEmpty();
+    }
+
+    private void OnDisable()
+    {
+        Variables.OnLanguageChanged -= OnChangedLanguage;
+    }
+
+    private void OnChangedLanguage()
+    {
+        if (currentData != null)
+        {
+            textAttack.text = currentData.StringAttack;
+            textIq.text = currentData.StringIQ;
+        }
     }
 
     public void SetEmpty()
@@ -21,32 +38,29 @@ public class CharacterTableTest2 : MonoBehaviour
         icon.sprite = null;
         textName.id = string.Empty;
         textDesc.id = string.Empty;
-        textAttack.id = string.Empty;
-        textIq.id = string.Empty;
+        textAttack.text = string.Empty;
+        textIq.text = string.Empty;
 
         textName.OnChangedId();
         textDesc.OnChangedId();
-        textAttack.OnChangedId();
-        textIq.OnChangedId();
     }
 
-    public void SetItemData(string itemId)
+    public void SetCharacterData(string itemId)
     {
         CharacterData data = DataTableManager.CharacterTable.Get(itemId);
-        SetItemData(data);
+        SetCharacterData(data);
     }
-    public void SetItemData(CharacterData data)
+
+    public void SetCharacterData(CharacterData data)
     {
+        currentData = data;
         icon.sprite = data.SpriteIcon;
         textName.id = data.Name;
         textDesc.id = data.Desc;
-        textAttack.id = data.Attack;
-        textIq.id = data.IQ;
+        textAttack.text = data.StringAttack;
+        textIq.text = data.StringIQ;
 
         textName.OnChangedId();
         textDesc.OnChangedId();
-        textAttack.OnChangedId();
-        textIq.OnChangedId();
-
     }
 }

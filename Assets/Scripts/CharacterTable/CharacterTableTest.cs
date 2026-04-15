@@ -10,7 +10,7 @@ public class CharacterTableTest : MonoBehaviour
     public string charId;
     public Image Icon;
     public LocalizationText textName;
-    public CharacterTableTest2 itemInfo;
+    public CharacterTableTest2 charInfo;
 
     
     private void OnEnable()
@@ -25,7 +25,7 @@ public class CharacterTableTest : MonoBehaviour
 
     public void OnClick()
     {
-        itemInfo.SetItemData(charId);
+        charInfo.SetCharacterData(charId);
     }
 
     public void OnChangeCharacterId()
