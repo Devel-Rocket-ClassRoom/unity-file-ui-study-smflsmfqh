@@ -1,6 +1,9 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+// To do: 수정
+// 캐릭터테이블.csv에 공격력 수치를 넣고
+// 스트링테이블은 "공격력" 텍스트는 따로 분리
 
 public class CharacterTableTest : MonoBehaviour
 {

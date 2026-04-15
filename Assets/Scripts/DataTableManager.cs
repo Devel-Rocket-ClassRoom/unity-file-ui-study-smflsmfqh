@@ -37,11 +37,12 @@ public static class DataTableManager
             tables.Add(id, stringTable);
         }
 #endif
-
+        // --- 아이템 테이블 로드 ---
         var itemTable = new ItemTable();
         itemTable.Load(DataTableIds.Item);
         tables.Add(DataTableIds.Item, itemTable);
 
+        // --- 캐릭터 테이블 로드 ---
         var characterTable = new CharacterTable();
         characterTable.Load(DataTableIds.Character);
         tables.Add(DataTableIds.Character, characterTable);

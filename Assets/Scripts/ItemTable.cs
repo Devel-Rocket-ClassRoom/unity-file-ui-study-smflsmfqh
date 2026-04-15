@@ -12,6 +12,7 @@ public class ItemData
     public int Cost { get; set; }
     public string Icon { get; set; }
 
+    // 디버깅용
     public override string ToString()
     {
         return $"{Id} / {Type} / {Name} / {Desc} / {Value} / {Cost} / {Icon}";
