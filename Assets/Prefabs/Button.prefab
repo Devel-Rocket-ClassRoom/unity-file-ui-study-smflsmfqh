@@ -96,20 +96,20 @@ MonoBehaviour:
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
+  m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 1, g: 0.4575472, b: 0.8543104, a: 1}
+    m_PressedColor: {r: 0.25, g: 0.9148871, b: 1, a: 1}
+    m_SelectedColor: {r: 0.636238, g: 1, b: 0.3820755, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
+    m_HighlightedSprite: {fileID: 21300000, guid: bf2eeb9d8b12478428f1273e37a07abb, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: 8208c6162d038de4d8bdb1cc83f2fd09, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: bf2eeb9d8b12478428f1273e37a07abb, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: 9d36179791f962742af1155e37c9c3bc, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -131,7 +131,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3479618926196550274, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_Name
-      value: Title
+      value: Continue
+      objectReference: {fileID: 0}
+    - target: {fileID: 4568629044637399025, guid: 34147271465a19344930685568ef54d3, type: 3}
+      propertyPath: m_text
+      value: Continue
       objectReference: {fileID: 0}
     - target: {fileID: 4819642524167034875, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_Pivot.x
@@ -216,8 +220,36 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3479618926196550274, guid: 34147271465a19344930685568ef54d3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1376680235453433895}
   m_SourcePrefab: {fileID: 100100000, guid: 34147271465a19344930685568ef54d3, type: 3}
+--- !u!1 &1359671127978825772 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3479618926196550274, guid: 34147271465a19344930685568ef54d3, type: 3}
+  m_PrefabInstance: {fileID: 2491778489861255854}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1376680235453433895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1359671127978825772}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 306cc8c2b49d7114eaa3623786fc2126, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.LayoutElement
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: 80
+  m_PreferredHeight: 18
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!224 &6950844241613710677 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4819642524167034875, guid: 34147271465a19344930685568ef54d3, type: 3}
