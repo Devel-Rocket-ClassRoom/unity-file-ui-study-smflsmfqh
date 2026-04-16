@@ -56,4 +56,9 @@ public class ItemTable : DataTable
         }
         return table[id];
     }
+
+    public List<ItemData> GetAll()
+    {
+        return new List<ItemData>(table.Values);
+    }
 }
