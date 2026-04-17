@@ -37,18 +37,18 @@ public class StartWindow : GenericWindow
 
     public void OnContinue()
     {
-        Debug.Log("OnContinue()");
+        windowManager.Open(1);
     }
 
     public void OnNewGame()
     {
-        Debug.Log("OnNewGame()");
+        windowManager.Open(2);
         
     }
 
     public void OnOption()
     {
-        Debug.Log("OnOption()");
+        windowManager.Open(3);
         
     }
 }

@@ -251,7 +251,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4568629044637399025, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_text
-      value: toggle
+      value: easy
       objectReference: {fileID: 0}
     - target: {fileID: 4568629044637399025, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_margin.x
@@ -271,23 +271,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4819642524167034875, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4819642524167034875, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4819642524167034875, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 4819642524167034875, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_SizeDelta.x
-      value: -20
+      value: 63
       objectReference: {fileID: 0}
     - target: {fileID: 4819642524167034875, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 0
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 4819642524167034875, guid: 34147271465a19344930685568ef54d3, type: 3}
       propertyPath: m_LocalPosition.x
