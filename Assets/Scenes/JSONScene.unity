@@ -1409,9 +1409,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1932619832}
-        m_TargetAssemblyTypeName: JsonTest2Answer, Assembly-CSharp
-        m_MethodName: OnCreate
+      - m_Target: {fileID: 1932619831}
+        m_TargetAssemblyTypeName: JsonTest2, Assembly-CSharp
+        m_MethodName: OnClickCreate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1901,7 +1901,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932619827}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b3a9ebaa801c86b42ad1a28fb350be90, type: 3}
   m_Name: 
@@ -1916,7 +1916,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1932619827}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d423eed9ad508d547884558de6179188, type: 3}
   m_Name: 
