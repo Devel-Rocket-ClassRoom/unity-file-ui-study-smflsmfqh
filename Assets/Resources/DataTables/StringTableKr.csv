@@ -21,3 +21,11 @@ Char3Desc,왕쪼랩 엘프.
 Char4Desc,그냥 힐러.
 AttackFormat,공격력: {0}
 IqFormat,지능(IQ): {0}
+NAME,이름
+DESC,설명
+TYPE,타입
+VALUE,밸류
+COST,비용
+WEAPON,무기
+EQUIP,장비
+CONSUMABLE,소모품

@@ -7496,7 +7496,6 @@ MonoBehaviour:
   - {fileID: 556770203}
   cancelButton: {fileID: 755222803}
   acceptButton: {fileID: 181344808}
-  selected: 0
 --- !u!114 &1791522933
 MonoBehaviour:
   m_ObjectHideFlags: 0

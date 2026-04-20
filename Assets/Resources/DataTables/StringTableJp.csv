@@ -21,3 +21,11 @@ Char3Desc,これはただのエルフです.
 Char4Desc,これはただのヒーラーです.
 AttackFormat,こうげきりょく: {0}
 IqFormat,ちのう: {0}
+NAME,이름
+DESC,설명
+TYPE,타입
+VALUE,밸류
+COST,비용
+WEAPON,무기
+EQUIP,장비
+CONSUMABLE,소모품

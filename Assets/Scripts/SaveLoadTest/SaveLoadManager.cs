@@ -1,5 +1,5 @@
 using UnityEngine;
-using SaveDataVC = SaveDataV3;
+using SaveDataVC = SaveDataV4;
 using Newtonsoft.Json;
 using System.IO;
 
@@ -11,7 +11,7 @@ public static class SaveLoadManager
         Encrypted,          // AES 암호화 바이너리(.dat) - 릴리즈용
     }
 
-    public static SaveMode Mode {  get; set; } = SaveMode.Encrypted;
+    public static SaveMode Mode {  get; set; } = SaveMode.Text;
 
     private static readonly string SaveDirectory = $"{Application.persistentDataPath}/Save";
 
@@ -23,7 +23,7 @@ public static class SaveLoadManager
         "Save3.json",
     };
 
-    public static int SaveDataVersion { get; } = 3;
+    public static int SaveDataVersion { get; } = 4; // 새 버전 추가 시 최신 버전에 맞게 변경
 
     public static SaveDataVC Data { get; set; } = new SaveDataVC();
 

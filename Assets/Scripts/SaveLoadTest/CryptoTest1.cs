@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Rendering.Universal;
 
 public class CryptoTest1 : MonoBehaviour
 {

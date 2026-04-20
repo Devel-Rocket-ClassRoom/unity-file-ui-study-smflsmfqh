@@ -21,3 +21,11 @@ Char3Desc,This is a just Elf.
 Char4Desc,This is a just Healer.
 AttackFormat,Attack: {0}
 IqFormat,IQ: {0}
+NAME,Name
+DESC,Description
+TYPE,Type
+VALUE,Value
+COST,Cost
+WEAPON,Weapon
+EQUIP,Equip
+CONSUMABLE,Consumable
