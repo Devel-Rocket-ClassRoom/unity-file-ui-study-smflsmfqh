@@ -29,3 +29,15 @@ COST,비용
 WEAPON,무기
 EQUIP,장비
 CONSUMABLE,소모품
+FILTER_NONE,없음
+SORT_TIME_ASC,にちづけ（ふるいじゅん）
+SORT_TIME_DESC,にちづけ（あたらしいじゅん）
+SORT_NAME_ASC,なまえ（しょうじゅん）
+SORT_NAME_DESC,なまえ（こうじゅん）
+SORT_COST_ASC,かかく（やすいじゅん）
+SORT_COST_DESC,かかく（たかいじゅん）
+FILTER_NOT_CONSUMABLE,しょうもうひんいがい
+LOAD,よみこむ
+SAVE,ほぞんする
+CREATE,あいてむさくせい
+DELETE,あいてむさくじょ

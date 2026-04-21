@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Data.Common;
+
 
 public class UiItemInfo : MonoBehaviour
 {
@@ -12,8 +12,10 @@ public class UiItemInfo : MonoBehaviour
     public TextMeshProUGUI textType;
     public TextMeshProUGUI textValue;
     public TextMeshProUGUI textCost;
+
     public void SetEmpty()
     {
+        gameObject.SetActive(false);
         iconImage.sprite = null;
         textName.text = string.Empty;
         textDescription.text = string.Empty;
@@ -25,6 +27,7 @@ public class UiItemInfo : MonoBehaviour
 
     public void SetSaveItemData(SaveItemData saveItemData)
     {
+        gameObject.SetActive(true);
         ItemData data = saveItemData.ItemData;
         iconImage.sprite = data.SpriteIcon;
         textName.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("NAME"), data.StringName);
@@ -39,17 +42,4 @@ public class UiItemInfo : MonoBehaviour
         textCost.text = string.Format(FormatCommon, DataTableManager.StringTable.Get("COST"), data.Cost);
     }
 
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            SetEmpty();
-        }
-
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            var saveItemData = SaveItemData.GetRandomItem();
-            SetSaveItemData(saveItemData);
-        }
-    }
 }

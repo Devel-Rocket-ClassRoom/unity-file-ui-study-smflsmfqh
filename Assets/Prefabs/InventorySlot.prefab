@@ -135,8 +135,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b30f80413d9147847bdbdfd466c1892e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::UiInvenSlot
+  slotIndex: -1
   imageIcon: {fileID: 3298499413582893922}
   textName: {fileID: 6298299242251042983}
+  button: {fileID: 2230901062835523905}
 --- !u!1 &6981255477830627912
 GameObject:
   m_ObjectHideFlags: 0

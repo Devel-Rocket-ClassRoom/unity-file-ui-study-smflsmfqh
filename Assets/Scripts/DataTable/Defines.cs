@@ -10,6 +10,7 @@ public enum ItemTypes
     Weapon,
     Equip,
     Consumable,
+    NonConsumable,
 }
 
 public enum CharacterTypes

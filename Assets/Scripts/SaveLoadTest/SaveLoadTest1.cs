@@ -39,7 +39,7 @@ public class SaveLoadTest1 : MonoBehaviour
                 {
                    Debug.Log(saveItemData.InstanceId);
                    Debug.Log(saveItemData.ItemData.StringName);
-                   Debug.Log(saveItemData.creationIime);
+                   Debug.Log(saveItemData.CreationTime);
                 }
             }
             else
