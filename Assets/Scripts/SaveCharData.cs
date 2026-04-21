@@ -1,7 +1,5 @@
 using System;
-using CsvHelper.Configuration.Attributes;
 using Newtonsoft.Json;
-using UnityEngine;
 
 [Serializable]
 public class SaveCharData 

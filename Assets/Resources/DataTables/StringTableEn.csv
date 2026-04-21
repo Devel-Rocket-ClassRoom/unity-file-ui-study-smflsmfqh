@@ -36,8 +36,16 @@ SORT_NAME_ASC,Name (Ascending)
 SORT_NAME_DESC,Name (Descending)
 SORT_COST_ASC,Cost (Ascending)
 SORT_COST_DESC,Cost (Descending)
+SORT_ATTACK_ASC,공격력 (오름차순)
+SORT_ATTAC_DESC,공격력 (내림차순)
+SORT_IQ_ASC,지능 (오름차순)
+SORT_IQ_DESC,지능 (내림차순)
 FILTER_NOT_CONSUMABLE,Not Consumable
 LOAD,LOAD
 SAVE,SAVE
 CREATE,CREATE
 DELETE,DELETE
+WARRIOR,Warrior
+MAGICIAN,Magician
+HEALER,Healer
+ELF,Elf

@@ -4,7 +4,7 @@ using UnityEditor;
 
 public class UiInventory : MonoBehaviour
 {
-     public TMP_Dropdown sorting;
+    public TMP_Dropdown sorting;
     public TMP_Dropdown filtering;
 
     public UiInvenSlotList uiInvenSlotList;
@@ -28,12 +28,12 @@ public class UiInventory : MonoBehaviour
 
     public void OnchangeSorting(int idx)
     {
-        uiInvenSlotList.Sorting = (UiInvenSlotList.SortingOptions)idx;
+        uiInvenSlotList.Sorting = (SortingOptions)idx;
     }
 
     public void OnChangeFiltering(int idx)
     {
-        uiInvenSlotList.Filtering = (UiInvenSlotList.FilteringOptions)idx;
+        uiInvenSlotList.Filtering = (FilteringOptions)idx;
     }
 
     // 각 버튼들에 해당하는 함수들 (Save, Load, Create, Remove)
@@ -41,8 +41,8 @@ public class UiInventory : MonoBehaviour
     public void OnSave()
     {
         SaveLoadManager.Data.ItemList = uiInvenSlotList.GetSaveItemDataList();
-        SaveLoadManager.Data.ItemSorting = (UiInvenSlotList.SortingOptions)sorting.value;
-        SaveLoadManager.Data.ItemFiltering = (UiInvenSlotList.FilteringOptions)filtering.value;
+        SaveLoadManager.Data.ItemSorting = (SortingOptions)sorting.value;
+        SaveLoadManager.Data.ItemFiltering = (FilteringOptions)filtering.value;
         SaveLoadManager.Save();
 
     }

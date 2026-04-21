@@ -8,26 +8,6 @@ using UnityEngine.UI;
 
 public class UiInvenSlotList : MonoBehaviour
 {
-    public enum SortingOptions
-    {
-        CreationTimeAscending,
-        CreationTimeDescending,
-        NameAscending,
-        NameDescending,
-        CostAscending,
-        CostDescending,
-    }
-
-    public enum FilteringOptions
-    {
-        None,
-        Weapon,
-        Equip,
-        Consumable,
-        NonConsumable,
-
-    }
-
     public readonly System.Comparison<SaveItemData>[] comparisons =
     {
         (lhs, rhs) => lhs.CreationTime.CompareTo(rhs.CreationTime),

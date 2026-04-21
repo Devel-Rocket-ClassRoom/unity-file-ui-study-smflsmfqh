@@ -73,8 +73,11 @@ public class SaveDataV3 : SaveData
 public class SaveDataV4 : SaveDataV2
 {
     public List<SaveItemData> ItemList = new List<SaveItemData>();  // ItemTable의 ItemId만 저장
-    public UiInvenSlotList.SortingOptions ItemSorting = UiInvenSlotList.SortingOptions.NameAscending;
-    public UiInvenSlotList.FilteringOptions ItemFiltering = UiInvenSlotList.FilteringOptions.None;
+    public List<SaveCharData> CharList = new List<SaveCharData>();
+    public SortingOptions ItemSorting = SortingOptions.NameAscending;
+    public FilteringOptions ItemFiltering = FilteringOptions.None;
+    public SortingOptions CharSorting = SortingOptions.NameAscending;
+    public FilteringOptions charFiltering = FilteringOptions.None;
 
     // saveItemData 클래스를 새로 만들어서, 멤버로 어떤 아이템 테이블과 연결될지 
     // 공유, 아이템들을 구분할 수 있는 인스턴스 아이디, 아이템을 최초로 획득한 시간도 데이터에 포함

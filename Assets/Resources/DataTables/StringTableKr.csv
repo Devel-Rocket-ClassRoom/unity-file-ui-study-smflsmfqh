@@ -36,8 +36,16 @@ SORT_NAME_ASC,이름 (오름차순)
 SORT_NAME_DESC,이름 (내림차순)
 SORT_COST_ASC,가격 (오름차순)
 SORT_COST_DESC,가격 (내림차순)
+SORT_ATTACK_ASC,공격력 (오름차순)
+SORT_ATTAC_DESC,공격력 (내림차순)
+SORT_IQ_ASC,지능 (오름차순)
+SORT_IQ_DESC,지능 (내림차순)
 FILTER_NOT_CONSUMABLE,소모품 아님
 LOAD,불러오기
 SAVE,저장하기
 CREATE,아이템 생성
 DELETE,아이템 삭제
+WARRIOR,전사
+MAGICIAN,마법사
+HEALER,힐러
+ELF,엘프

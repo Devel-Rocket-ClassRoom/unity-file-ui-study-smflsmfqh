@@ -6,6 +6,27 @@ using UnityEngine.UI;
 
 public class UiCharInvenSlotList : MonoBehaviour
 {
+    public readonly System.Comparison<SaveCharData>[] comparisons =
+    {
+        (lhs, rhs) => lhs.CreationTime.CompareTo(rhs.CreationTime),
+        (lhs, rhs) => rhs.CreationTime.CompareTo(lhs.CreationTime),
+        (lhs, rhs) => lhs.charData.StringName.CompareTo(rhs.charData.StringName),
+        (lhs, rhs) => rhs.charData.StringName.CompareTo(lhs.charData.StringName),
+        (lhs, rhs) => lhs.charData.Attack.CompareTo(rhs.charData.Attack),
+        (lhs, rhs) => rhs.charData.Attack.CompareTo(lhs.charData.Attack),
+        (lhs, rhs) => lhs.charData.IQ.CompareTo(rhs.charData.IQ),
+        (lhs, rhs) => rhs.charData.IQ.CompareTo(lhs.charData.IQ)
+    };
+
+    public readonly System.Func<SaveCharData, bool>[] filterings =
+    {
+        (x) => true,
+        (x) => x.charData.Type == CharacterTypes.Warrior,
+        (x) => x.charData.Type == CharacterTypes.Magician,
+        (x) => x.charData.Type == CharacterTypes.Healer,
+        (x) => x.charData.Type == CharacterTypes.Elf,
+    };
+
     public UiCharInvenSlot prefab;
     public ScrollRect scrollRect;
     public UnityEvent onUpdateSlots;
@@ -13,6 +34,34 @@ public class UiCharInvenSlotList : MonoBehaviour
 
     private List<UiCharInvenSlot> uiCharInvenSlotList = new List<UiCharInvenSlot>();
     private List<SaveCharData> saveCharDataList = new List<SaveCharData>();
+
+    private SortingOptions sorting = SortingOptions.CreationTimeAscending;
+    private FilteringOptions filtering = FilteringOptions.None;
+
+    public SortingOptions Sorting
+    {
+        get => sorting;
+        set
+        {
+            if (sorting != value)
+            {
+                sorting = value;
+                UpdateSlots();
+            }
+        }
+    }
+    public FilteringOptions Filtering
+    {
+        get => filtering;
+        set
+        {
+            if (filtering != value)
+            {
+                filtering = value;
+                UpdateSlots();
+            }
+        }
+    }
 
     private int selectedSlotIndex = -1;
 
@@ -49,11 +98,18 @@ public class UiCharInvenSlotList : MonoBehaviour
         UpdateSlots();
     }
 
+    public List<SaveCharData> GetSaveCharDataList()
+    {
+        return saveCharDataList;
+    }
+
     private void UpdateSlots()
     {
-        if (uiCharInvenSlotList.Count < saveCharDataList.Count)
+        var list = saveCharDataList.Where(filterings[(int)filtering]).ToList();
+        list.Sort(comparisons[(int)sorting]);
+        if (uiCharInvenSlotList.Count < list.Count)
         {
-            for (int i = uiCharInvenSlotList.Count; i < saveCharDataList.Count; ++i)
+            for (int i = uiCharInvenSlotList.Count; i < list.Count; ++i)
             {
                 var newSlot = Instantiate(prefab, scrollRect.content);
                 newSlot.slotIndex = i;
@@ -73,10 +129,10 @@ public class UiCharInvenSlotList : MonoBehaviour
 
         for (int i = 0; i < uiCharInvenSlotList.Count; i++)
         {
-            if (i < saveCharDataList.Count)
+            if (i < list.Count)
             {
                 uiCharInvenSlotList[i].gameObject.SetActive(true);
-                uiCharInvenSlotList[i].SetCharacter(saveCharDataList[i]);
+                uiCharInvenSlotList[i].SetCharacter(list[i]);
             }
             else
             {
