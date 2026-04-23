@@ -11,13 +11,17 @@ public class UiCharInfo : MonoBehaviour
     public TextMeshProUGUI textAttack;
     public TextMeshProUGUI textIQ;
 
+    private int clickCount;
+
     public void Awake()
     {
         gameObject.SetActive(false);
+        clickCount = 0;
     }
      public void SetEmpty()
     {
         gameObject.SetActive(false);
+        clickCount = 0;
         iconImage.sprite = null;
         textName.text = string.Empty;
         textDesc.text = string.Empty;

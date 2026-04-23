@@ -43,8 +43,8 @@ SORT_IQ_DESC,지능 (내림차순)
 FILTER_NOT_CONSUMABLE,소모품 아님
 LOAD,불러오기
 SAVE,저장하기
-CREATE,아이템 생성
-DELETE,아이템 삭제
+CREATE,생성하기
+DELETE,삭제하기
 WARRIOR,전사
 MAGICIAN,마법사
 HEALER,힐러
